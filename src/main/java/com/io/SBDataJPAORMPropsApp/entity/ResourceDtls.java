@@ -11,10 +11,10 @@ import javax.persistence.*;
 public class ResourceDtls {
     @Id
     @Column(name = "RESOURCE_ID")
-    @GeneratedValue
+    //@GeneratedValue
     // Below is code for custom sequence generator in Oracle DB
-    // @SequenceGenerator(name = "req_seq",sequenceName = "<Actual sequnce name>",allocationSize = 1)
-    // @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "req_seq")
+    @SequenceGenerator(name = "req_seq",sequenceName = "resource_id_seq",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "req_seq")
     private Integer resourceId;
     @Column(name = "RESOURCE_NAME")
     private String resourceName;
